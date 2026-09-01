@@ -13,8 +13,8 @@ export default function Home() {
       <SubHomeSection />
       <WhyChooseUsSection />
       <ProjectsSection />
-      <TeamSection />
-      <TestimonialSection />
+      {/* <TeamSection /> */}
+      {/* <TestimonialSection /> */}
       <ContactSection />
     </>
   );
