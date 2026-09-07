@@ -11,13 +11,24 @@ export type Project = {
 
 export const company = {
   name: "Core Tech Partner",
-  phone: "+92 307 5773869",
-  phone2: "+92 314 3159330",
   email: "info@coretechpartner.com",
   support: "support@coretechpartner.com",
   address: "COCO WorkSpace, Floor #2, Office #10, I-10, Islamabad, Pakistan",
   shortAddress: "I-10, Islamabad, Pakistan",
 };
+
+export const socialLinks = [
+  { label: "Facebook", href: "https://www.facebook.com/share/1HRr38kbYc/" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/coretechpartnerofficial?igsh=ZWJhY3N4cmU3NTdp",
+  },
+  { label: "X", href: "https://x.com/CoreTechPartnr" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/coretechpartner/posts/?feedView=all",
+  },
+];
 
 export const projects: Project[] = [
   {
@@ -27,7 +38,7 @@ export const projects: Project[] = [
     year: "2025",
     client: "Retail Group",
     description:
-      "End-to-end distribution and outlet management with real-time sales visibility for FMCG businesses.",
+      "Complete distribution and outlet management with live sales visibility for FMCG businesses.",
     image:
       "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=1200&auto=format&fit=crop",
     tags: ["Enterprise", "Dashboard", "Realtime"],
@@ -39,7 +50,7 @@ export const projects: Project[] = [
     year: "2025",
     client: "Innovate Finance",
     description:
-      "Analytics-rich SaaS dashboard for financial operations, reporting, and multi-role access.",
+      "SaaS dashboard packed with analytics for financial operations, reporting, and role based access.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
     tags: ["SaaS", "Fintech", "Analytics"],
@@ -51,7 +62,7 @@ export const projects: Project[] = [
     year: "2024",
     client: "CarePlus",
     description:
-      "Patient-focused mobile experience for appointments, records, and care communication.",
+      "Mobile experience designed around patients for appointments, records, and care communication.",
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
     tags: ["iOS", "Android", "Healthcare"],
@@ -75,7 +86,7 @@ export const projects: Project[] = [
     year: "2024",
     client: "StyleCom",
     description:
-      "Inventory, staff, and store operations web app for multi-location retail teams.",
+      "Inventory, staff, and store operations web app for retail teams across multiple locations.",
     image:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
     tags: ["Retail", "Web App", "Ops"],
@@ -94,12 +105,12 @@ export const projects: Project[] = [
   },
   {
     slug: "ecommerce-storefront",
-    title: "E-Commerce Storefront",
-    category: "E-Commerce",
+    title: "Ecommerce Storefront",
+    category: "Ecommerce",
     year: "2025",
     client: "UrbanMart",
     description:
-      "High-converting storefront with custom catalog, checkout, and marketing integrations.",
+      "Storefront built to convert, with custom catalog, checkout, and marketing integrations.",
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop",
     tags: ["Shopify", "Conversion", "UX"],
@@ -123,7 +134,7 @@ export const projects: Project[] = [
     year: "2024",
     client: "BrightLane",
     description:
-      "Fast, SEO-ready marketing website with CMS and lead capture flows.",
+      "Fast marketing website optimized for SEO, with CMS and lead capture flows.",
     image:
       "https://images.unsplash.com/photo-1467232004584-a2412c5410e4?q=80&w=1200&auto=format&fit=crop",
     tags: ["Marketing", "CMS", "SEO"],
@@ -134,7 +145,7 @@ export const services = [
   {
     num: "01",
     title: "Web Application Development",
-    desc: "High-performance SaaS and enterprise web platforms with modern frameworks and clean architecture.",
+    desc: "Fast, scalable SaaS and enterprise web platforms with modern frameworks and clean architecture.",
     points: ["React / Next.js", "Scalable APIs", "Admin dashboards"],
     icon: "web",
   },
@@ -148,7 +159,7 @@ export const services = [
   {
     num: "03",
     title: "FMCG & Retail Systems",
-    desc: "Distribution, outlet, and sales systems with real-time visibility for consumer businesses.",
+    desc: "Distribution, outlet, and sales systems with live visibility for consumer businesses.",
     points: ["Outlet management", "Sales tracking", "Inventory insights"],
     icon: "retail",
   },
@@ -162,13 +173,13 @@ export const services = [
   {
     num: "05",
     title: "UI / UX Product Design",
-    desc: "Research-backed interfaces that feel clear, trustworthy, and conversion-focused.",
+    desc: "Interfaces grounded in research that feel clear, trustworthy, and built to convert.",
     points: ["Wireframes", "Design systems", "Prototypes"],
     icon: "design",
   },
   {
     num: "06",
-    title: "E-Commerce Solutions",
+    title: "Ecommerce Solutions",
     desc: "Storefronts and commerce platforms designed to sell more with less friction.",
     points: ["Shopify", "Custom checkout", "Growth tooling"],
     icon: "cart",
@@ -183,7 +194,7 @@ export const services = [
   {
     num: "08",
     title: "Data & Security",
-    desc: "Secure architectures, backups, and access controls for business-critical applications.",
+    desc: "Secure architectures, backups, and access controls for your most critical business applications.",
     points: ["Auth & roles", "Backups", "Hardening"],
     icon: "security",
   },
@@ -204,101 +215,6 @@ export const processSteps = [
     step: "03",
     title: "Testing & Maintenance",
     desc: "QA, launch, and ongoing optimization keep your product stable and growing.",
-  },
-];
-
-export const pricing = [
-  {
-    name: "Starter",
-    price: "Custom",
-    period: "Project",
-    desc: "For focused websites and MVPs",
-    features: [
-      "Discovery workshop",
-      "UI design & development",
-      "Responsive delivery",
-      "Basic SEO setup",
-      "2 weeks support",
-    ],
-    popular: false,
-  },
-  {
-    name: "Growth",
-    price: "Custom",
-    period: "Project",
-    desc: "For SaaS and product teams",
-    features: [
-      "Full product design",
-      "Web or mobile build",
-      "API integrations",
-      "QA & staging",
-      "1 month support",
-    ],
-    popular: true,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    period: "Retainer",
-    desc: "For ongoing engineering partnership",
-    features: [
-      "Dedicated squad",
-      "Priority delivery",
-      "Cloud & DevOps",
-      "Security reviews",
-      "SLA support",
-    ],
-    popular: false,
-  },
-];
-
-export const testimonials = [
-  {
-    name: "Alex Johnson",
-    role: "CTO, TechNova",
-    content:
-      "Working with Core Tech Partner has been a game-changer. Their technical depth and dedication to quality are unmatched — they delivered our SaaS platform ahead of schedule.",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&auto=format&fit=crop",
-  },
-  {
-    name: "Maria Garcia",
-    role: "Founder, StyleCom",
-    content:
-      "The e-commerce experience they built transformed our storefront. We have seen a 40% increase in conversions since launch.",
-    image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=256&auto=format&fit=crop",
-  },
-  {
-    name: "James Wilson",
-    role: "Director, Innovate Finance",
-    content:
-      "Clear communication and an agile process made delivery feel effortless. They are genuine technology partners.",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=256&auto=format&fit=crop",
-  },
-];
-
-export const team = [
-  {
-    name: "Product Engineering",
-    role: "Web & Mobile",
-    image: "/team1.jpeg",
-  },
-  {
-    name: "Backend Architects",
-    role: "APIs & Cloud",
-    image: "/team2.jpeg",
-  },
-  {
-    name: "UI / UX Design",
-    role: "Product Design",
-    image: "/team3.jpeg",
-  },
-  {
-    name: "QA & Delivery",
-    role: "Quality Assurance",
-    image: "/team4.jpeg",
   },
 ];
 
