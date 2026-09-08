@@ -20,11 +20,13 @@ export default function Home() {
       <ProcessSection />
       {/* 5. Proof: selected work */}
       <ProjectsSection />
+
       {/* 6. Numbers that back it up */}
       <StatsSection />
       {/* 7. Insights */}
       <BlogsSection />
       {/* 8. Final call to action */}
+
       <ContactSection />
     </>
   );
