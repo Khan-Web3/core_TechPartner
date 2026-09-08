@@ -1,3 +1,4 @@
+// Core Tech Partner site file
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 

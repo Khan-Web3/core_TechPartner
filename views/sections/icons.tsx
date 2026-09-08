@@ -1,3 +1,4 @@
+// Core Tech Partner site file
 type Props = { name: string; className?: string };
 
 const paths: Record<string, React.ReactNode> = {

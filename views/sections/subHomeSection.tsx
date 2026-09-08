@@ -1,5 +1,7 @@
 "use client";
 
+// Core Tech Partner site file
+
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -112,8 +114,7 @@ export default function SubHomeSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 + i * 0.07 }}
-                  className="flex gap-5 rounded-[14px] border border-line bg-background/60 p-5 hover:border-brand/40 hover:bg-paper transition-colors"
-                >
+                  className="flex gap-5 rounded-[14px] border border-line bg-background/60 p-5 hover:border-brand/40 hover:bg-paper transition-colors">
                   <span className="mt-1 h-9 w-9 shrink-0 rounded-[10px] bg-brand/10 text-brand font-display font-bold flex items-center justify-center text-sm">
                     0{i + 1}
                   </span>

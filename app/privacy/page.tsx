@@ -1,3 +1,4 @@
+// Core Tech Partner site file
 import type { Metadata } from "next";
 import LegalPage, { type LegalSection } from "@/app/components/LegalPage";
 
