@@ -14,22 +14,22 @@ export default function PageBanner({
   return (
     <section className="page-banner">
       <div className="container-x relative z-10">
-        <p className="text-white/80 text-sm font-semibold tracking-[0.16em] uppercase mb-3">
+        <p className="text-white/70 text-xs font-semibold tracking-[0.18em] uppercase mb-4">
           {subtitle}
         </p>
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tight">
           {title}
         </h1>
         {crumbs.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2 text-sm text-white/80">
-            <Link href="/" className="hover:text-white">
+          <div className="flex flex-wrap items-center gap-2 text-sm text-white/70">
+            <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
             {crumbs.map((c) => (
               <span key={c.label} className="inline-flex items-center gap-2">
-                <span>/</span>
+                <span className="opacity-50">/</span>
                 {c.href ? (
-                  <Link href={c.href} className="hover:text-white">
+                  <Link href={c.href} className="hover:text-white transition-colors">
                     {c.label}
                   </Link>
                 ) : (

@@ -1,94 +1,72 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import { testimonials } from "@/lib/data";
-
-import "swiper/css";
-import "swiper/css/pagination";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { value: "10+", label: "Years Experience" },
-  { value: "99%", label: "Retention Rate" },
-  { value: "250+", label: "Projects Completed" },
-  { value: "1.2k+", label: "Happy Clients" },
+  { value: 10, suffix: "+", label: "Years experience" },
+  { value: 99, suffix: "%", label: "Client retention" },
+  { value: 250, suffix: "+", label: "Projects shipped" },
+  { value: 1.2, suffix: "k+", label: "Happy clients", decimals: 1 },
 ];
 
-export default function TestimonialSection() {
+function Counter({
+  value,
+  suffix,
+  decimals = 0,
+}: {
+  value: number;
+  suffix: string;
+  decimals?: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const [n, setN] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const duration = 1400;
+    const start = performance.now();
+    let raf = 0;
+    const tick = (t: number) => {
+      const p = Math.min(1, (t - start) / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setN(value * eased);
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, value]);
+
   return (
-    <>
-      {/* Counters */}
-      <section className="bg-brand text-white py-12 md:py-14">
-        <div className="container-x grid grid-cols-2 xl:grid-cols-4 gap-8">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center xl:text-left">
-              <p className="font-display text-4xl md:text-5xl font-extrabold mb-1">
-                {s.value}
-              </p>
-              <p className="text-white/80 text-sm font-medium">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+    <span ref={ref} className="tabular-nums">
+      {n.toFixed(decimals)}
+      {suffix}
+    </span>
+  );
+}
 
-      <section className="section-pad bg-white">
-        <div className="container-x">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="section-label">Testimonial</p>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ink mb-4">
-              What Our Clients Say About Us
-            </h2>
-            <p className="text-muted text-lg">
-              Real feedback from founders and product teams who shipped with
-              Core Tech Partner.
-            </p>
-          </div>
-
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            spaceBetween={24}
-            slidesPerView={1}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1280: { slidesPerView: 3 },
-            }}
-            autoplay={{ delay: 4500, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            className="!pb-12 testimonial-swiper"
+export default function StatsSection() {
+  return (
+    <section className="relative overflow-hidden bg-brand text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(255,255,255,0.18),transparent_45%),radial-gradient(circle_at_90%_100%,rgba(9,12,18,0.25),transparent_45%)]" />
+      <div className="container-x relative grid grid-cols-2 xl:grid-cols-4 divide-x divide-white/15">
+        {stats.map((s, i) => (
+          <motion.div
+            key={s.label}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.07 }}
+            className="py-9 md:py-11 px-5 md:px-8 first:pl-0"
           >
-            {testimonials.map((t) => (
-              <SwiperSlide key={t.name}>
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="h-full border border-line p-7 bg-surface"
-                >
-                  <div className="flex gap-1 mb-4 text-amber-400">
-                    {"★★★★★".split("").map((s, i) => (
-                      <span key={i}>{s}</span>
-                    ))}
-                  </div>
-                  <p className="text-ink/80 leading-relaxed mb-6 min-h-[120px]">
-                    “{t.content}”
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="relative w-12 h-12 overflow-hidden">
-                      <Image src={t.image} alt={t.name} fill className="object-cover" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-ink">{t.name}</p>
-                      <p className="text-sm text-muted">{t.role}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
-    </>
+            <p className="font-display text-4xl md:text-5xl font-extrabold mb-2 leading-none">
+              <Counter value={s.value} suffix={s.suffix} decimals={s.decimals} />
+            </p>
+            <p className="text-white/80 text-sm tracking-wide">{s.label}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 }

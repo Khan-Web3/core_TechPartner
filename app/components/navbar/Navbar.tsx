@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { company } from "@/lib/data";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -21,7 +20,7 @@ export default function Navbar() {
   const isHome = pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -40,85 +39,24 @@ export default function Navbar() {
 
   const solid = scrolled || open || !isHome;
   const text = solid ? "text-ink" : "text-white";
-  const muted = solid ? "text-muted" : "text-white/75";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[100]">
-      {/* Top bar — Techor style */}
-      <div
-        className={`hidden lg:block transition-colors duration-300 ${
-          solid ? "bg-brand text-white" : "bg-black/25 text-white backdrop-blur-sm"
-        }`}
-      >
-        <div className="container-x flex items-center justify-between py-2 text-sm">
-          <div className="flex items-center gap-6">
-            <a href={`mailto:${company.email}`} className="hover:opacity-80">
-              {company.email}
-            </a>
-            <a href={`tel:${company.phone.replace(/\s/g, "")}`} className="hover:opacity-80">
-              {company.phone}
-            </a>
-          </div>
-          <p className="opacity-90">{company.shortAddress}</p>
-        </div>
-      </div>
-
       <div
         className={`transition-all duration-300 ${
           solid
-            ? "bg-white border-b border-line shadow-[0_8px_30px_rgba(11,18,32,0.06)]"
+            ? "bg-paper/90 border-b border-line backdrop-blur-md"
             : "bg-transparent"
         }`}
       >
-        <nav className="container-x flex items-center justify-between gap-4 py-3.5">
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <svg width="42" height="42" viewBox="0 0 120 120">
-              <defs>
-                <linearGradient id="navGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#0f8f91" />
-                  <stop offset="100%" stopColor="#1e4fd7" />
-                </linearGradient>
-              </defs>
-              <circle
-                cx="60"
-                cy="60"
-                r="56"
-                fill="url(#navGrad)"
-                fillOpacity="0.12"
-                stroke="url(#navGrad)"
-                strokeWidth="2"
-                strokeDasharray="4 4"
-              />
-              <circle cx="60" cy="60" r="46" fill="#fff" />
-              <path
-                d="M60 25 C42 25 28 39 28 60 C28 81 42 95 60 95"
-                stroke="url(#navGrad)"
-                strokeWidth="9"
-                fill="none"
-                strokeLinecap="round"
-              />
-              <path
-                d="M53 35 L53 95"
-                stroke="#1e4fd7"
-                strokeWidth="9"
-                strokeLinecap="round"
-              />
-              <path
-                d="M53 60 C53 48 67 48 67 60 C67 72 53 72 53 60 Z"
-                fill="#fff"
-              />
-            </svg>
-            <div className="hidden sm:flex flex-col">
-              <span className={`font-display text-[17px] font-bold leading-none ${text}`}>
-                CORE <span className="text-brand">TECH</span>
-              </span>
-              <span className={`text-[10px] font-semibold tracking-[0.22em] uppercase mt-1 ${muted}`}>
-                Partner
-              </span>
-            </div>
+        <nav className="container-x flex items-center justify-between gap-4 py-4">
+          <Link href="/" className="shrink-0">
+            <span className={`font-display text-[1.15rem] font-extrabold tracking-tight ${text}`}>
+              Core Tech <span className="text-brand">Partner</span>
+            </span>
           </Link>
 
-          <ul className="hidden xl:flex items-center gap-1">
+          <ul className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => {
               const active =
                 item.href === "/"
@@ -128,12 +66,12 @@ export default function Navbar() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`px-4 py-2 text-[15px] font-semibold transition-colors ${
+                    className={`px-3.5 py-2 text-sm font-semibold transition-colors ${
                       active
                         ? "text-brand"
                         : solid
-                          ? "text-ink/70 hover:text-brand"
-                          : "text-white/80 hover:text-white"
+                          ? "text-ink/65 hover:text-ink"
+                          : "text-white/75 hover:text-white"
                     }`}
                   >
                     {item.label}
@@ -143,15 +81,20 @@ export default function Navbar() {
             })}
           </ul>
 
-          <div className="hidden xl:block">
-            <Link href="/contact" className="btn-primary !py-2.5 !px-5 !text-sm">
-              Get A Quote
+          <div className="hidden lg:block">
+            <Link
+              href="/contact"
+              className={`btn-primary !py-2.5 !px-5 !text-sm ${
+                !solid ? "!bg-white !text-ink hover:!bg-brand-soft" : ""
+              }`}
+            >
+              Start a project
             </Link>
           </div>
 
           <button
             type="button"
-            className="xl:hidden w-11 h-11 flex flex-col justify-center items-end gap-1.5"
+            className="lg:hidden w-11 h-11 flex flex-col justify-center items-end gap-1.5"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -168,20 +111,20 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="xl:hidden bg-white border-b border-line shadow-lg"
+            className="lg:hidden bg-paper border-b border-line"
           >
-            <div className="container-x py-5 flex flex-col gap-1">
+            <div className="container-x py-6 flex flex-col gap-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="py-3 font-display text-xl font-semibold text-ink"
+                  className="py-3 font-display text-2xl font-semibold text-ink"
                 >
                   {item.label}
                 </Link>
               ))}
-              <Link href="/contact" className="btn-primary mt-3 w-full">
-                Get A Quote
+              <Link href="/contact" className="btn-primary mt-4 w-full">
+                Start a project
               </Link>
             </div>
           </motion.div>

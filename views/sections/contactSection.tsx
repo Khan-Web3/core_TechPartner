@@ -1,137 +1,70 @@
 "use client";
 
-import { FormEvent, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { blogs } from "@/lib/data";
+import { company } from "@/lib/data";
+import { ArrowIcon } from "./icons";
+import ContactForm from "@/app/components/ContactForm";
 
 export default function ContactSection() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
-    <>
-      {/* Appointment */}
-      <section className="section-pad bg-[#0b1220] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('/2.jpg')] bg-cover bg-center" />
-        <div className="container-x relative z-10 grid grid-cols-1 xl:grid-cols-2 gap-10 items-center">
-          <div>
-            <p className="text-brand font-bold tracking-[0.16em] uppercase text-sm mb-3">
-              Make an Appointment
-            </p>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] mb-4">
-              Feel free to contact with us
-            </h2>
-            <p className="text-white/70 text-lg max-w-lg">
-              Tell us about your website, mobile app, FMCG system, or custom
-              software need — we don’t spam your inbox.
-            </p>
-          </div>
-
-          <div className="bg-white text-ink p-7 md:p-9">
-            {submitted ? (
-              <div className="min-h-[260px] flex flex-col items-center justify-center text-center">
-                <p className="font-display text-2xl font-bold mb-2">
-                  Message received
-                </p>
-                <p className="text-muted">We’ll get back to you shortly.</p>
-              </div>
-            ) : (
-              <form className="space-y-4" onSubmit={onSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input
-                    required
-                    placeholder="Your Name"
-                    className="w-full bg-surface border border-line px-4 py-3.5 focus:outline-none focus:border-brand"
-                  />
-                  <input
-                    required
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full bg-surface border border-line px-4 py-3.5 focus:outline-none focus:border-brand"
-                  />
-                </div>
-                <select
-                  required
-                  defaultValue=""
-                  className="w-full bg-surface border border-line px-4 py-3.5 focus:outline-none focus:border-brand text-muted"
-                >
-                  <option value="" disabled>
-                    Select a service *
-                  </option>
-                  <option>Web Development</option>
-                  <option>Mobile App</option>
-                  <option>FMCG System</option>
-                  <option>UI / UX Design</option>
-                  <option>Cloud & Custom Software</option>
-                </select>
-                <textarea
-                  required
-                  rows={4}
-                  placeholder="Project details"
-                  className="w-full bg-surface border border-line px-4 py-3.5 focus:outline-none focus:border-brand resize-none"
-                />
-                <button type="submit" className="btn-primary w-full !py-4">
-                  Submit Message
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Blogs */}
-      <section className="section-pad bg-white">
-        <div className="container-x">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
-            <div>
-              <p className="section-label">Our Blogs</p>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ink">
-                Recent Blog & Articles About Technology
+    <section className="section-pad bg-background relative overflow-hidden">
+      <div className="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-brand/10 blur-3xl" />
+      <div className="container-x relative">
+        <div className="grid grid-cols-1 xl:grid-cols-12 rounded-[24px] overflow-hidden shadow-[0_30px_80px_rgba(18,21,26,0.12)]">
+          <motion.div
+            initial={{ opacity: 0, x: -18 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="xl:col-span-5 relative bg-ink text-white p-8 md:p-12 flex flex-col justify-between overflow-hidden"
+          >
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(13,124,126,0.4),transparent_50%)]" />
+            <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:64px_64px]" />
+            <div className="relative">
+              <p className="section-label">Contact</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.1] mb-5">
+                Tell us what you want to build.
               </h2>
+              <p className="text-white/65 leading-relaxed max-w-sm">
+                Whether it’s a website, mobile app, FMCG system, or custom
+                software, share a few details and we’ll respond within one
+                business hour.
+              </p>
             </div>
-            <Link href="/contact" className="btn-outline self-start">
-              View All Posts
-            </Link>
-          </div>
+            <div className="relative mt-12 space-y-5 text-sm">
+              <div>
+                <p className="text-[0.68rem] uppercase tracking-[0.16em] text-white/45 mb-1">Email</p>
+                <a href={`mailto:${company.email}`} className="font-semibold hover:text-brand transition-colors">
+                  {company.email}
+                </a>
+              </div>
+              <div>
+                <p className="text-[0.68rem] uppercase tracking-[0.16em] text-white/45 mb-1">Support</p>
+                <a href={`mailto:${company.support}`} className="font-semibold hover:text-brand transition-colors">
+                  {company.support}
+                </a>
+              </div>
+              <div>
+                <p className="text-[0.68rem] uppercase tracking-[0.16em] text-white/45 mb-1">Studio</p>
+                <p className="text-white/75 leading-relaxed">{company.shortAddress}</p>
+                <Link href="/contact#map" className="inline-flex items-center gap-1.5 mt-2 text-brand font-semibold hover:text-white transition-colors">
+                  View on map
+                  <ArrowIcon className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {blogs.map((blog, i) => (
-              <motion.article
-                key={blog.title}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="group border border-line overflow-hidden hover:border-brand transition-colors"
-              >
-                <div className="relative h-52 overflow-hidden">
-                  <Image
-                    src={blog.image}
-                    alt={blog.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="text-xs text-muted mb-2">
-                    {blog.author} · {blog.date}
-                  </p>
-                  <h3 className="font-display text-xl font-bold text-ink group-hover:text-brand transition-colors">
-                    {blog.title}
-                  </h3>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 18 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="xl:col-span-7 bg-paper p-8 md:p-12"
+          >
+            <ContactForm variant="home" />
+          </motion.div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
