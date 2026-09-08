@@ -1,3 +1,4 @@
+// Core Tech Partner site file
 export type Project = {
   slug: string;
   title: string;

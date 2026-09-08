@@ -1,5 +1,7 @@
 "use client";
 
+// Core Tech Partner site file
+
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 

@@ -1,5 +1,7 @@
 "use client";
 
+// Core Tech Partner site file
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

@@ -1,3 +1,4 @@
+// Core Tech Partner site file
 import HomeSection from "@/views/sections/homeSection";
 import WhyChooseUsSection from "@/views/sections/whyChooseUsSection";
 import SubHomeSection from "@/views/sections/subHomeSection";

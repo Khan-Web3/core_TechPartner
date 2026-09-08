@@ -1,5 +1,7 @@
 "use client";
 
+// Core Tech Partner site file
+
 import { FormEvent, useState } from "react";
 import { ArrowIcon } from "@/views/sections/icons";
 

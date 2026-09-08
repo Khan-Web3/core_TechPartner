@@ -1,3 +1,4 @@
+// Core Tech Partner site file
 import Link from "next/link";
 import PageBanner from "@/app/components/PageBanner";
 import { company } from "@/lib/data";

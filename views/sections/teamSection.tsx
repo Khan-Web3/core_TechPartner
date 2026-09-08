@@ -1,5 +1,7 @@
 "use client";
 
+// Core Tech Partner site file
+
 import { motion } from "framer-motion";
 import { processSteps } from "@/lib/data";
 

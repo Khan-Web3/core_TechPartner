@@ -1,5 +1,7 @@
 "use client";
 
+// Core Tech Partner site file
+
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";

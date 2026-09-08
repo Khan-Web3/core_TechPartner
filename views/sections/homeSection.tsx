@@ -1,5 +1,7 @@
 "use client";
 
+// Core Tech Partner site file
+
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";

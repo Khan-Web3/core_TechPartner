@@ -1,3 +1,4 @@
+// Core Tech Partner site file
 import Link from "next/link";
 
 type Props = {

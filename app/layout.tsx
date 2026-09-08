@@ -1,3 +1,4 @@
+// Core Tech Partner site file
 import type { Metadata } from "next";
 import { Manrope, Syne } from "next/font/google";
 import Navbar from "./components/navbar/Navbar";

@@ -1,5 +1,7 @@
 "use client";
 
+// Core Tech Partner site file
+
 import { motion } from "framer-motion";
 import PageBanner from "@/app/components/PageBanner";
 import ContactForm from "@/app/components/ContactForm";
