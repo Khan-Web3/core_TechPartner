@@ -1,19 +1,12 @@
 "use client";
 
-import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { company } from "@/lib/data";
 import { ArrowIcon } from "./icons";
+import ContactForm from "@/app/components/ContactForm";
 
 export default function ContactSection() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <section className="section-pad bg-background relative overflow-hidden">
       <div className="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-brand/10 blur-3xl" />
@@ -68,47 +61,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="xl:col-span-7 bg-paper p-8 md:p-12"
           >
-            {submitted ? (
-              <div className="min-h-[320px] flex flex-col items-center justify-center text-center">
-                <span className="w-14 h-14 rounded-full bg-brand/10 text-brand flex items-center justify-center mb-4">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6"><path d="M5 13l4 4L19 7" /></svg>
-                </span>
-                <p className="font-display text-2xl font-bold mb-2 text-ink">Message received</p>
-                <p className="text-muted">We’ll get back to you shortly.</p>
-              </div>
-            ) : (
-              <form className="space-y-6" onSubmit={onSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <label className="block">
-                    <span className="field-label">Your name</span>
-                    <input required placeholder="Jane Doe" className="field-input" />
-                  </label>
-                  <label className="block">
-                    <span className="field-label">Email address</span>
-                    <input required type="email" placeholder="jane@company.com" className="field-input" />
-                  </label>
-                </div>
-                <label className="block">
-                  <span className="field-label">Service</span>
-                  <select required defaultValue="" className="field-input">
-                    <option value="" disabled>Select a service</option>
-                    <option>Web Development</option>
-                    <option>Mobile App</option>
-                    <option>FMCG System</option>
-                    <option>UI / UX Design</option>
-                    <option>Cloud & Custom Software</option>
-                  </select>
-                </label>
-                <label className="block">
-                  <span className="field-label">Project details</span>
-                  <textarea required rows={4} placeholder="Tell us about goals, timeline, and scope…" className="field-input resize-none" />
-                </label>
-                <button type="submit" className="btn-primary !px-8 group">
-                  Send message
-                  <ArrowIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
-              </form>
-            )}
+            <ContactForm variant="home" />
           </motion.div>
         </div>
       </div>

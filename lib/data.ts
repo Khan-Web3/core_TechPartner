@@ -6,6 +6,7 @@ export type Project = {
   client: string;
   description: string;
   image: string;
+  url: string;
   tags: string[];
 };
 
@@ -32,112 +33,40 @@ export const socialLinks = [
 
 export const projects: Project[] = [
   {
-    slug: "fmcg-platform",
-    title: "FMCG Distribution Platform",
-    category: "Enterprise",
-    year: "2025",
-    client: "Retail Group",
-    description:
-      "Complete distribution and outlet management with live sales visibility for FMCG businesses.",
-    image:
-      "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Enterprise", "Dashboard", "Realtime"],
-  },
-  {
-    slug: "fintech-dashboard",
-    title: "Fintech Analytics Dashboard",
-    category: "SaaS",
-    year: "2025",
-    client: "Innovate Finance",
-    description:
-      "SaaS dashboard packed with analytics for financial operations, reporting, and role based access.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-    tags: ["SaaS", "Fintech", "Analytics"],
-  },
-  {
-    slug: "healthcare-app",
-    title: "Healthcare Mobile App",
-    category: "Mobile",
-    year: "2024",
-    client: "CarePlus",
-    description:
-      "Mobile experience designed around patients for appointments, records, and care communication.",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
-    tags: ["iOS", "Android", "Healthcare"],
-  },
-  {
-    slug: "ai-chat-interface",
-    title: "AI Support Chat Interface",
-    category: "AI",
-    year: "2025",
-    client: "TechNova",
-    description:
-      "Conversational AI interface integrated into an existing product for support automation.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
-    tags: ["AI", "UX", "Integration"],
-  },
-  {
-    slug: "retail-management",
-    title: "Retail Management System",
+    slug: "c-promoter-catalist",
+    title: "C Promoter",
     category: "Web App",
-    year: "2024",
-    client: "StyleCom",
-    description:
-      "Inventory, staff, and store operations web app for retail teams across multiple locations.",
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Retail", "Web App", "Ops"],
-  },
-  {
-    slug: "delivery-tracker",
-    title: "Delivery Tracker App",
-    category: "Mobile",
-    year: "2024",
-    client: "SwiftRoute",
-    description:
-      "Live delivery tracking for drivers and customers with route optimization support.",
-    image:
-      "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Logistics", "Mobile", "Maps"],
-  },
-  {
-    slug: "ecommerce-storefront",
-    title: "Ecommerce Storefront",
-    category: "Ecommerce",
     year: "2025",
-    client: "UrbanMart",
+    client: "Catalist",
     description:
-      "Storefront built to convert, with custom catalog, checkout, and marketing integrations.",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Shopify", "Conversion", "UX"],
+      "Field marketing and promoter management platform with live dashboards for visits, attendance, and project performance.",
+    image: "/httpscpromoter.catalist-me.com.png",
+    url: "https://cpromoter.catalist-me.com",
+    tags: ["Dashboard", "FMCG", "Field Ops"],
   },
   {
-    slug: "cloud-ops-portal",
-    title: "Cloud Ops Portal",
-    category: "Cloud",
-    year: "2023",
-    client: "Nimbus Soft",
-    description:
-      "Internal cloud operations portal for deployments, monitoring, and team workflows.",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Cloud", "DevOps", "Portal"],
-  },
-  {
-    slug: "agency-website",
-    title: "Marketing Agency Website",
+    slug: "c-store-bptech",
+    title: "C Store",
     category: "Web App",
-    year: "2024",
-    client: "BrightLane",
+    year: "2025",
+    client: "BP Tech",
     description:
-      "Fast marketing website optimized for SEO, with CMS and lead capture flows.",
-    image:
-      "https://images.unsplash.com/photo-1467232004584-a2412c5410e4?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Marketing", "CMS", "SEO"],
+      "Retail and store operations platform built for teams that need clear visibility across outlets and daily workflows.",
+    image: "/httpscstore.bptech-me.com.jpeg",
+    url: "https://cstore.bptech-me.com",
+    tags: ["Retail", "Operations", "Dashboard"],
+  },
+  {
+    slug: "c-store-catalist",
+    title: "C Store",
+    category: "Web App",
+    year: "2025",
+    client: "Catalist",
+    description:
+      "Store management system tailored for Catalist teams, covering outlet activity, reporting, and day to day operations.",
+    image: "/httpscstore.catalist-me.com.png",
+    url: "https://cstore.catalist-me.com",
+    tags: ["Retail", "Operations", "Reporting"],
   },
 ];
 

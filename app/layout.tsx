@@ -18,9 +18,20 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Core Tech Partner | Software Development & Digital Solutions",
+  title: {
+    default: "Core Tech Partner | Software Development & Digital Solutions",
+    template: "%s | Core Tech Partner",
+  },
   description:
     "Core Tech Partner builds modern web apps, mobile products, and enterprise FMCG solutions. Your trusted technology partner in Islamabad.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

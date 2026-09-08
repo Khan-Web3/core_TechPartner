@@ -1,8 +1,8 @@
 "use client";
 
-import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import PageBanner from "@/app/components/PageBanner";
+import ContactForm from "@/app/components/ContactForm";
 import { company } from "@/lib/data";
 
 const mapsQuery = encodeURIComponent(company.address);
@@ -10,13 +10,6 @@ const mapsEmbed = `https://www.google.com/maps?q=${mapsQuery}&z=15&output=embed`
 const mapsLink = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <>
       <PageBanner title="Contact" crumbs={[{ label: "Contact" }]} />
@@ -81,55 +74,11 @@ export default function ContactPage() {
             <p className="text-muted mb-8">
               Share a few details. We don’t spam your inbox.
             </p>
-
-            {submitted ? (
-              <div className="min-h-[280px] flex flex-col items-center justify-center text-center">
-                <p className="font-display text-2xl font-bold text-ink mb-2">
-                  Message received
-                </p>
-                <p className="text-muted">Our team will contact you shortly.</p>
-              </div>
-            ) : (
-              <form className="space-y-5" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <input required placeholder="First name *" className="field-input" />
-                  <input required placeholder="Last name *" className="field-input" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <input
-                    required
-                    type="email"
-                    placeholder="Email *"
-                    className="field-input"
-                  />
-                  <input placeholder="Company (optional)" className="field-input" />
-                </div>
-                <select required defaultValue="" className="field-input text-muted">
-                  <option value="" disabled>
-                    Select service *
-                  </option>
-                  <option>Web Development</option>
-                  <option>Mobile App</option>
-                  <option>FMCG System</option>
-                  <option>UI / UX Design</option>
-                  <option>Cloud & Custom Software</option>
-                </select>
-                <textarea
-                  required
-                  rows={5}
-                  placeholder="Message *"
-                  className="field-input resize-none"
-                />
-                <button type="submit" className="btn-primary">
-                  Submit message
-                </button>
-              </form>
-            )}
+            <ContactForm variant="page" />
           </motion.div>
         </div>
       </section>
 
-      {/* Map */}
       <section id="map" className="pb-10 md:pb-10 bg-paper scroll-mt-24">
         <div className="container-x">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-7">
@@ -163,7 +112,6 @@ export default function ContactPage() {
               allowFullScreen
               className="w-full h-[380px] md:h-[480px] block grayscale-[0.35] contrast-[1.05]"
             />
-            {/* address card */}
             <div className="absolute left-4 right-4 bottom-4 md:left-6 md:bottom-6 md:right-auto md:max-w-sm bg-ink text-white rounded-[16px] p-6 shadow-[0_20px_50px_rgba(18,21,26,0.35)] ring-1 ring-white/10">
               <div className="flex items-start gap-4">
                 <span className="mt-0.5 w-10 h-10 shrink-0 rounded-full bg-brand text-white flex items-center justify-center shadow-[0_0_0_6px_rgba(13,124,126,0.2)]">

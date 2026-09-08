@@ -7,8 +7,6 @@ import { projects } from "@/lib/data";
 import { ArrowIcon } from "./icons";
 
 export default function ProjectsSection() {
-  const items = projects.slice(0, 5);
-
   return (
     <section className="section-pad bg-ink text-white relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(13,124,126,0.3),transparent_40%),radial-gradient(circle_at_90%_90%,rgba(196,92,38,0.14),transparent_35%)]" />
@@ -27,56 +25,47 @@ export default function ProjectsSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:auto-rows-[270px] gap-5">
-          {items.map((project, index) => {
-            const featured = index === 0;
-            return (
-              <motion.article
-                key={project.slug}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.06, duration: 0.5 }}
-                className={`group relative overflow-hidden rounded-[18px] min-h-[280px] ${
-                  featured ? "md:col-span-2 xl:col-span-2 xl:row-span-2" : ""
-                }`}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.slug}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.06, duration: 0.5 }}
+              className="group relative overflow-hidden rounded-[18px] aspect-[16/10] bg-[#0b1220]"
+            >
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 block"
               >
-                <Link href="/projects" className="absolute inset-0 block">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes={featured ? "(max-width: 1280px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(9,12,18,0.92)_0%,rgba(9,12,18,0.35)_45%,rgba(9,12,18,0.05)_100%)] transition-opacity" />
-                  <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[18px] group-hover:ring-brand/50 transition-colors" />
-                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-7 flex items-end justify-between gap-4">
-                    <div>
-                      <span className="inline-block rounded-full bg-white/10 backdrop-blur-md border border-white/15 px-3 py-1 text-[0.68rem] uppercase tracking-[0.14em] text-white/80 mb-3">
-                        {project.category} · {project.year}
-                      </span>
-                      <h3
-                        className={`font-display font-bold leading-tight ${
-                          featured ? "text-2xl md:text-3xl" : "text-xl"
-                        }`}
-                      >
-                        {project.title}
-                      </h3>
-                      {featured && (
-                        <p className="text-white/65 mt-2 max-w-lg text-sm md:text-base hidden md:block">
-                          {project.description}
-                        </p>
-                      )}
-                    </div>
-                    <span className="shrink-0 w-11 h-11 rounded-full bg-white text-ink flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                      <ArrowIcon className="w-4 h-4 -rotate-45" />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-contain object-center bg-[#0b1220] transition-transform duration-700 group-hover:scale-[1.02]"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(9,12,18,0.88)_0%,rgba(9,12,18,0.2)_42%,transparent_68%)] pointer-events-none" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[18px] group-hover:ring-brand/50 transition-colors pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 flex items-end justify-between gap-4">
+                  <div>
+                    <span className="inline-block rounded-full bg-white/10 backdrop-blur-md border border-white/15 px-3 py-1 text-[0.68rem] uppercase tracking-[0.14em] text-white/80 mb-2">
+                      {project.client} · {project.year}
                     </span>
+                    <h3 className="font-display text-xl md:text-2xl font-bold leading-tight">
+                      {project.title}
+                    </h3>
                   </div>
-                </Link>
-              </motion.article>
-            );
-          })}
+                  <span className="shrink-0 w-10 h-10 rounded-full bg-white text-ink flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <ArrowIcon className="w-4 h-4 -rotate-45" />
+                  </span>
+                </div>
+              </a>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
