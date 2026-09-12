@@ -22,7 +22,7 @@ export default function ProcessSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="hidden md:block absolute top-7 left-[16.6%] right-[16.6%] h-px origin-left bg-[linear-gradient(90deg,var(--brand),rgba(13,124,126,0.2))]"
+            className="hidden md:block absolute top-7 left-[16.6%] right-[16.6%] h-px origin-left bg-[linear-gradient(90deg,var(--brand),rgba(0,112,184,0.2))]"
           />
           {processSteps.map((step, i) => (
             <motion.div
@@ -33,7 +33,7 @@ export default function ProcessSection() {
               transition={{ delay: 0.15 + i * 0.12, duration: 0.5 }}
               className="relative flex flex-col items-start md:items-center md:text-center"
             >
-              <span className="relative z-10 mb-7 w-14 h-14 rounded-full bg-paper border border-brand/30 flex items-center justify-center shadow-[0_12px_30px_rgba(13,124,126,0.18)]">
+              <span className="relative z-10 mb-7 w-14 h-14 rounded-full bg-paper border border-brand/30 flex items-center justify-center shadow-[0_12px_30px_rgba(0,112,184,0.2)]">
                 <span className="w-10 h-10 rounded-full bg-brand text-white font-display font-bold flex items-center justify-center text-sm">
                   {step.step}
                 </span>

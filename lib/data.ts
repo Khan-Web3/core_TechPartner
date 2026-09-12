@@ -7,7 +7,7 @@ export type Project = {
   client: string;
   description: string;
   image: string;
-  url: string;
+  url?: string;
   tags: string[];
 };
 
@@ -15,7 +15,7 @@ export const company = {
   name: "Core Tech Partner",
   email: "info@coretechpartner.com",
   support: "support@coretechpartner.com",
-  address: "COCO WorkSpace, Floor #2, Office #10, I-10, Islamabad, Pakistan",
+  address: "COCO WorkSpace, Floor #2, Office #17, I-10, Islamabad, Pakistan",
   shortAddress: "I-10, Islamabad, Pakistan",
 };
 
@@ -36,7 +36,7 @@ export const projects: Project[] = [
   {
     slug: "c-promoter-catalist",
     title: "C Promoter",
-    category: "Web App",
+    category: "Web Apps",
     year: "2025",
     client: "Catalist",
     description:
@@ -48,19 +48,19 @@ export const projects: Project[] = [
   {
     slug: "c-store-bptech",
     title: "C Store",
-    category: "Web App",
+    category: "Web Apps",
     year: "2025",
     client: "BP Tech",
     description:
       "Retail and store operations platform built for teams that need clear visibility across outlets and daily workflows.",
-    image: "/httpscstore.bptech-me.com.jpeg",
+    image: "/cstore-bptech.jpg",
     url: "https://cstore.bptech-me.com",
     tags: ["Retail", "Operations", "Dashboard"],
   },
   {
     slug: "c-store-catalist",
     title: "C Store",
-    category: "Web App",
+    category: "Web Apps",
     year: "2025",
     client: "Catalist",
     description:
@@ -68,6 +68,50 @@ export const projects: Project[] = [
     image: "/httpscstore.catalist-me.com.png",
     url: "https://cstore.catalist-me.com",
     tags: ["Retail", "Operations", "Reporting"],
+  },
+  {
+    slug: "bp-care",
+    title: "BP Care",
+    category: "Mobile Apps",
+    year: "2025",
+    client: "Brand Partners",
+    description:
+      "Employee care mobile app with punch in, payroll, leave, requests, and biometric login for field and office teams.",
+    image: "/BP Care.png",
+    tags: ["HR", "Attendance", "Mobile"],
+  },
+  {
+    slug: "c-client",
+    title: "C Client",
+    category: "Mobile Apps",
+    year: "2025",
+    client: "Catalist",
+    description:
+      "Client facing mobile experience for Catalist teams to manage accounts, visits, and day to day field activity.",
+    image: "/C Client.png",
+    tags: ["CRM", "Field", "Mobile"],
+  },
+  {
+    slug: "c-store-pro",
+    title: "C Store Pro",
+    category: "Mobile Apps",
+    year: "2025",
+    client: "Catalist",
+    description:
+      "Mobile companion for store operations, giving teams quick access to outlet data, tasks, and execution tools on the go.",
+    image: "/C Store Pro.png",
+    tags: ["Retail", "Operations", "Mobile"],
+  },
+  {
+    slug: "cstore-evo",
+    title: "CStore Evo",
+    category: "Mobile Apps",
+    year: "2025",
+    client: "Catalist",
+    description:
+      "Evolved CStore mobile app for retail execution, insights, and store level workflows in the field.",
+    image: "/CStore Evo.png",
+    tags: ["Retail", "Execution", "Mobile"],
   },
 ];
 

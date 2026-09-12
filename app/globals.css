@@ -2,36 +2,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f7f4;
-  --foreground: #12151a;
-  --surface: #eceee8;
-  --muted: #5c6570;
-  --line: #d5d9d0;
-  --brand: #0d7c7e;
-  --brand-dark: #0a5f61;
-  --brand-soft: #d9efef;
-  --ink: #12151a;
-  --paper: #fbfbf8;
-  --accent: #c45c26;
+  /* Logo palette: deep navy + corporate blue from /coretech-logo.svg */
+  --background: #f3f7fb;
+  --foreground: #001f4d;
+  --surface: #e7eef6;
+  --muted: #5a6d85;
+  --line: #cdd7e6;
+  --brand: #0070b8;
+  --brand-dark: #00538c;
+  --brand-soft: #d6ebf8;
+  --ink: #002878;
+  --paper: #f8fafd;
+  --accent: #0080c8;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
-  --shadow-soft: 0 10px 30px rgba(18, 21, 26, 0.06);
-  --shadow-lift: 0 18px 40px rgba(18, 21, 26, 0.1);
+  --shadow-soft: 0 10px 30px rgba(0, 40, 120, 0.06);
+  --shadow-lift: 0 18px 40px rgba(0, 40, 120, 0.1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-muted: var(--muted);
-  --color-line: var(--line);
-  --color-brand: var(--brand);
-  --color-brand-dark: var(--brand-dark);
-  --color-brand-soft: var(--brand-soft);
-  --color-ink: var(--ink);
-  --color-paper: var(--paper);
-  --color-accent: var(--accent);
+  --color-background: #f3f7fb;
+  --color-foreground: #001f4d;
+  --color-surface: #e7eef6;
+  --color-muted: #5a6d85;
+  --color-line: #cdd7e6;
+  --color-brand: #0070b8;
+  --color-brand-dark: #00538c;
+  --color-brand-soft: #d6ebf8;
+  --color-ink: #002878;
+  --color-paper: #f8fafd;
+  --color-accent: #0080c8;
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
 }
@@ -64,8 +65,8 @@ h1, h2, h3, h4, .font-display {
 }
 
 ::selection {
-  background: #bfe6e6;
-  color: #0a5f61;
+  background: #c5e3f6;
+  color: #00538c;
 }
 
 .container-x {
@@ -106,7 +107,7 @@ h1, h2, h3, h4, .font-display {
   padding-top: clamp(8rem, 16vw, 11rem);
   padding-bottom: clamp(3rem, 6vw, 4.5rem);
   background:
-    linear-gradient(120deg, rgba(18, 21, 26, 0.88) 0%, rgba(13, 124, 126, 0.72) 100%),
+    linear-gradient(120deg, rgba(0, 40, 120, 0.9) 0%, rgba(0, 112, 184, 0.72) 100%),
     url("/hero-1.jpg") center/cover;
   color: #fff;
 }
@@ -194,13 +195,13 @@ h1, h2, h3, h4, .font-display {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 .field-input::placeholder {
-  color: #9aa3ad;
+  color: #8a9bb0;
 }
 .field-input:focus {
   outline: none;
   background: #fff;
   border-color: var(--brand);
-  box-shadow: 0 0 0 4px rgba(13, 124, 126, 0.12);
+  box-shadow: 0 0 0 4px rgba(0, 112, 184, 0.14);
 }
 
 .hero-swiper {
@@ -212,10 +213,10 @@ h1, h2, h3, h4, .font-display {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #eceee8;
+  background: #e7eef6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #b8bfb4;
+  background: #9db0c7;
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {

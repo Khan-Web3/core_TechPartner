@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "@/app/components/Logo";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -40,7 +41,6 @@ export default function Navbar() {
   }, [open]);
 
   const solid = scrolled || open || !isHome;
-  const text = solid ? "text-ink" : "text-white";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[100]">
@@ -52,10 +52,11 @@ export default function Navbar() {
         }`}
       >
         <nav className="container-x flex items-center justify-between gap-4 py-4">
-          <Link href="/" className="shrink-0">
-            <span className={`font-display text-[1.15rem] font-extrabold tracking-tight ${text}`}>
-              Core Tech <span className="text-brand">Partner</span>
-            </span>
+          <Link href="/" className="shrink-0 flex items-center" aria-label="Core Tech Partner home">
+            <Logo
+              inverted={!solid}
+              className="h-12"
+            />
           </Link>
 
           <ul className="hidden lg:flex items-center gap-1">

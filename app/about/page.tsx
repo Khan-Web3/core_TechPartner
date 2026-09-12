@@ -43,8 +43,8 @@ export default function AboutPage() {
             className="lg:col-span-6 relative aspect-[580/700] max-w-[560px] mx-auto lg:mx-0"
           >
             <div className="absolute -inset-3 rounded-[28px] border border-line/80" />
-            <div className="absolute inset-0 rounded-[24px] bg-[linear-gradient(135deg,rgba(13,124,126,0.14),transparent_55%)]" />
-            <div className="absolute left-0 top-0 w-[71.2%] h-[56.3%] rounded-[18px] overflow-hidden shadow-[0_24px_50px_rgba(18,21,26,0.18)] ring-1 ring-white/60">
+            <div className="absolute inset-0 rounded-[24px] bg-[linear-gradient(135deg,rgba(0,112,184,0.14),transparent_55%)]" />
+            <div className="absolute left-0 top-0 w-[71.2%] h-[56.3%] rounded-[18px] overflow-hidden shadow-[0_24px_50px_rgba(0,40,120,0.18)] ring-1 ring-white/60">
               <Image
                 src="/about-1.png"
                 alt="Core Tech Partner team"
@@ -53,7 +53,7 @@ export default function AboutPage() {
                 sizes="(max-width: 1024px) 70vw, 35vw"
               />
             </div>
-            <div className="absolute left-[28.8%] top-[42.7%] w-[71.2%] h-[57.3%] rounded-[18px] overflow-hidden shadow-[0_30px_60px_rgba(18,21,26,0.28)] ring-1 ring-white/70">
+            <div className="absolute left-[28.8%] top-[42.7%] w-[71.2%] h-[57.3%] rounded-[18px] overflow-hidden shadow-[0_30px_60px_rgba(0,40,120,0.28)] ring-1 ring-white/70">
               <Image
                 src="/about-2.png"
                 alt="Core Tech Partner at work"

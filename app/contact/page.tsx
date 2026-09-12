@@ -68,7 +68,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.08 }}
-            className="xl:col-span-7 bg-background rounded-[16px] p-7 md:p-10 shadow-[0_16px_40px_rgba(18,21,26,0.06)]"
+            className="xl:col-span-7 bg-background rounded-[16px] p-7 md:p-10 shadow-[0_16px_40px_rgba(0,40,120,0.06)]"
           >
             <h3 className="font-display text-2xl font-bold text-ink mb-2">
               Send a message
@@ -104,7 +104,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-[24px] overflow-hidden border border-line shadow-[0_30px_80px_rgba(18,21,26,0.12)]"
+            className="relative rounded-[24px] overflow-hidden border border-line shadow-[0_30px_80px_rgba(0,40,120,0.12)]"
           >
             <iframe
               title="Core Tech Partner location"
@@ -114,9 +114,9 @@ export default function ContactPage() {
               allowFullScreen
               className="w-full h-[380px] md:h-[480px] block grayscale-[0.35] contrast-[1.05]"
             />
-            <div className="absolute left-4 right-4 bottom-4 md:left-6 md:bottom-6 md:right-auto md:max-w-sm bg-ink text-white rounded-[16px] p-6 shadow-[0_20px_50px_rgba(18,21,26,0.35)] ring-1 ring-white/10">
+            <div className="absolute left-4 right-4 bottom-4 md:left-6 md:bottom-6 md:right-auto md:max-w-sm bg-ink text-white rounded-[16px] p-6 shadow-[0_20px_50px_rgba(0,40,120,0.35)] ring-1 ring-white/10">
               <div className="flex items-start gap-4">
-                <span className="mt-0.5 w-10 h-10 shrink-0 rounded-full bg-brand text-white flex items-center justify-center shadow-[0_0_0_6px_rgba(13,124,126,0.2)]">
+                <span className="mt-0.5 w-10 h-10 shrink-0 rounded-full bg-brand text-white flex items-center justify-center shadow-[0_0_0_6px_rgba(0,112,184,0.22)]">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5" aria-hidden>
                     <path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" />
                     <circle cx="12" cy="10" r="2.5" />
