@@ -77,8 +77,8 @@ export async function POST(request: Request) {
       .join("\n");
 
     const html = `
-      <div style="font-family:Arial,sans-serif;line-height:1.6;color:#12151a">
-        <h2 style="margin:0 0 16px;color:#0d7c7e">New contact form submission</h2>
+      <div style="font-family:Arial,sans-serif;line-height:1.6;color:#001f4d">
+        <h2 style="margin:0 0 16px;color:#0070b8">New contact form submission</h2>
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         ${company ? `<p><strong>Company:</strong> ${escapeHtml(company)}</p>` : ""}

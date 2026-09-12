@@ -1,20 +1,17 @@
 <!-- Core Tech Partner site file -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Core Tech Partner">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Core Tech Partner">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0f8f91"/>
-      <stop offset="100%" stop-color="#0a5f61"/>
+      <stop offset="0%" stop-color="#0080c8"/>
+      <stop offset="55%" stop-color="#0070b8"/>
+      <stop offset="100%" stop-color="#002878"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="url(#g)"/>
-  <text
-    x="32"
-    y="40"
-    text-anchor="middle"
-    font-family="Segoe UI, Arial, sans-serif"
-    font-size="22"
-    font-weight="700"
-    fill="#ffffff"
-    letter-spacing="-0.5"
-  >CTP</text>
+  <path d="M40 4 L68 18 V46 C68 60 40 76 40 76 C40 76 12 60 12 46 V18 Z" fill="url(#g)"/>
+  <path d="M40 13 L61 24.5 V45 C61 55.5 40 68 40 68 C40 68 19 55.5 19 45 V24.5 Z" fill="#ffffff"/>
+  <path d="M48 29.5C45.2 26.2 41.2 24.2 36.8 24.2C29.2 24.2 23 30.4 23 38C23 45.6 29.2 51.8 36.8 51.8C41.2 51.8 45.2 49.8 48 46.5" fill="none" stroke="#0070b8" stroke-width="5.2" stroke-linecap="round"/>
+  <path d="M40 27.5 V50.5" fill="none" stroke="#002878" stroke-width="4.2" stroke-linecap="round"/>
+  <path d="M32.5 27.5 H47.5" fill="none" stroke="#002878" stroke-width="4.2" stroke-linecap="round"/>
+  <circle cx="49.5" cy="29" r="5" fill="#0080c8"/>
+  <circle cx="49.5" cy="29" r="2.1" fill="#f8fafd"/>
 </svg>

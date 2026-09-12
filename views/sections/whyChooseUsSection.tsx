@@ -35,7 +35,7 @@ export default function WhyChooseUsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.07, duration: 0.5 }}
-              className="group relative overflow-hidden rounded-[18px] bg-paper border border-line p-7 flex flex-col min-h-[320px] transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(18,21,26,0.1)] hover:border-brand/40"
+              className="group relative overflow-hidden rounded-[18px] bg-paper border border-line p-7 flex flex-col min-h-[320px] transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(0,40,120,0.1)] hover:border-brand/40"
             >
               <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-brand/0 group-hover:bg-brand/10 transition-colors duration-500 blur-2xl" />
               <div className="flex items-start justify-between mb-8">

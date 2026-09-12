@@ -13,14 +13,14 @@ export default function ContactSection() {
     <section className="section-pad bg-background relative overflow-hidden">
       <div className="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-brand/10 blur-3xl" />
       <div className="container-x relative">
-        <div className="grid grid-cols-1 xl:grid-cols-12 rounded-[24px] overflow-hidden shadow-[0_30px_80px_rgba(18,21,26,0.12)]">
+        <div className="grid grid-cols-1 xl:grid-cols-12 rounded-[24px] overflow-hidden shadow-[0_30px_80px_rgba(0,40,120,0.12)]">
           <motion.div
             initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="xl:col-span-5 relative bg-ink text-white p-8 md:p-12 flex flex-col justify-between overflow-hidden"
           >
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(13,124,126,0.4),transparent_50%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,112,184,0.45),transparent_50%)]" />
             <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:64px_64px]" />
             <div className="relative">
               <p className="section-label">Contact</p>

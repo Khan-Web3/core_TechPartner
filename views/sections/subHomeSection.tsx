@@ -38,7 +38,7 @@ export default function SubHomeSection() {
             <div className="relative aspect-[580/700] max-w-[560px] mx-auto lg:mx-0">
               {/* decorative frame + grid */}
               <div className="absolute -inset-3 rounded-[28px] border border-line/80" />
-              <div className="absolute inset-0 rounded-[24px] bg-[linear-gradient(135deg,rgba(13,124,126,0.14),transparent_55%)]" />
+              <div className="absolute inset-0 rounded-[24px] bg-[linear-gradient(135deg,rgba(0,112,184,0.14),transparent_55%)]" />
               <div className="absolute inset-0 rounded-[24px] opacity-[0.35] bg-[linear-gradient(to_right,var(--line)_1px,transparent_1px),linear-gradient(to_bottom,var(--line)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]" />
               {/* accent line */}
               <span className="absolute -left-6 top-[18%] h-24 w-px bg-[linear-gradient(to_bottom,transparent,var(--brand),transparent)]" />
@@ -49,7 +49,7 @@ export default function SubHomeSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="absolute left-0 top-0 w-[71.2%] h-[56.3%] rounded-[18px] overflow-hidden shadow-[0_24px_50px_rgba(18,21,26,0.18)] ring-1 ring-white/60"
+                className="absolute left-0 top-0 w-[71.2%] h-[56.3%] rounded-[18px] overflow-hidden shadow-[0_24px_50px_rgba(0,40,120,0.18)] ring-1 ring-white/60"
               >
                 <Image
                   src="/about-1.png"
@@ -65,7 +65,7 @@ export default function SubHomeSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="absolute left-[28.8%] top-[42.7%] w-[71.2%] h-[57.3%] rounded-[18px] overflow-hidden shadow-[0_30px_60px_rgba(18,21,26,0.28)] ring-1 ring-white/70"
+                className="absolute left-[28.8%] top-[42.7%] w-[71.2%] h-[57.3%] rounded-[18px] overflow-hidden shadow-[0_30px_60px_rgba(0,40,120,0.28)] ring-1 ring-white/70"
               >
                 <Image
                   src="/about-2.png"
@@ -81,7 +81,7 @@ export default function SubHomeSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="absolute -bottom-4 left-4 sm:left-auto sm:right-0 bg-ink text-white rounded-[14px] px-6 py-5 shadow-[0_20px_50px_rgba(18,21,26,0.3)] ring-1 ring-white/10"
+              className="absolute -bottom-4 left-4 sm:left-auto sm:right-0 bg-ink text-white rounded-[14px] px-6 py-5 shadow-[0_20px_50px_rgba(0,40,120,0.3)] ring-1 ring-white/10"
             >
               <p className="font-display text-4xl font-extrabold text-brand leading-none">10+</p>
               <p className="text-xs text-white/65 mt-2 uppercase tracking-[0.14em]">

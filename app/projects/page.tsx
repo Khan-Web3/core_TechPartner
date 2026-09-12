@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import PageBanner from "@/app/components/PageBanner";
+import ImageLightbox from "@/app/components/ImageLightbox";
 import { projects } from "@/lib/data";
 
 const categories = [
@@ -16,6 +17,7 @@ const categories = [
 
 export default function ProjectsPage() {
   const [active, setActive] = useState("All");
+  const [preview, setPreview] = useState<{ src: string; alt: string } | null>(null);
 
   const filtered = useMemo(() => {
     if (active === "All") return projects;
@@ -56,13 +58,14 @@ export default function ProjectsPage() {
                 transition={{ delay: index * 0.04 }}
                 className="group"
               >
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
+                <button
+                  type="button"
+                  onClick={() =>
+                    setPreview({ src: project.image, alt: project.title })
+                  }
+                  className="block w-full text-left"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-[14px] mb-4 bg-[#e8edf2] shadow-[0_14px_36px_rgba(18,21,26,0.08)]">
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-[14px] mb-4 bg-[#e8edf2] shadow-[0_14px_36px_rgba(0,40,120,0.08)] cursor-zoom-in">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -80,13 +83,10 @@ export default function ProjectsPage() {
                       </h2>
                     </div>
                   </div>
-                  <p className="text-muted text-sm leading-relaxed mb-2">
-                    {project.description}
-                  </p>
-                  <p className="text-sm font-semibold text-brand group-hover:underline">
-                    Visit live site →
-                  </p>
-                </a>
+                </button>
+                <p className="text-muted text-sm leading-relaxed">
+                  {project.description}
+                </p>
               </motion.article>
             ))}
           </div>
@@ -107,6 +107,12 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
+
+      <ImageLightbox
+        src={preview?.src ?? null}
+        alt={preview?.alt ?? ""}
+        onClose={() => setPreview(null)}
+      />
     </>
   );
 }

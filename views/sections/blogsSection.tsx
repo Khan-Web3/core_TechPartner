@@ -19,7 +19,7 @@ export default function BlogsSection() {
               Notes from the studio.
             </h2>
           </div>
-          <Link href="/contact" className="btn-outline self-start group">
+          <Link href="/" className="btn-outline self-start group">
             More articles
             <ArrowIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
@@ -33,7 +33,7 @@ export default function BlogsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.07 }}
-              className="group rounded-[18px] overflow-hidden bg-background border border-line hover:border-brand/40 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(18,21,26,0.1)] transition-all duration-400"
+              className="group rounded-[18px] overflow-hidden bg-background border border-line hover:border-brand/40 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(0,40,120,0.1)] transition-all duration-400"
             >
               <div className="relative h-52 overflow-hidden">
                 <Image

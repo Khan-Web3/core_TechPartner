@@ -1,6 +1,7 @@
 // Core Tech Partner site file
 import Link from "next/link";
 import { company, socialLinks } from "@/lib/data";
+import Logo from "@/app/components/Logo";
 
 const nav = [
   ["About", "/about"],
@@ -39,10 +40,10 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-ink text-white">
       {/* background: grid lines + glows */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:96px_96px] [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_80%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(13,124,126,0.35),transparent_45%),radial-gradient(circle_at_100%_100%,rgba(196,92,38,0.12),transparent_40%)]" />
-      <div className="pointer-events-none absolute left-0 right-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(13,124,126,0.9),transparent)]" />
-      <span className="pointer-events-none absolute left-[18%] top-0 h-40 w-px bg-[linear-gradient(to_bottom,rgba(13,124,126,0.8),transparent)]" />
-      <span className="pointer-events-none absolute right-[22%] bottom-0 h-56 w-px bg-[linear-gradient(to_top,rgba(13,124,126,0.6),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(0,112,184,0.4),transparent_45%),radial-gradient(circle_at_100%_100%,rgba(0,128,200,0.18),transparent_40%)]" />
+      <div className="pointer-events-none absolute left-0 right-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(0,112,184,0.9),transparent)]" />
+      <span className="pointer-events-none absolute left-[18%] top-0 h-40 w-px bg-[linear-gradient(to_bottom,rgba(0,112,184,0.8),transparent)]" />
+      <span className="pointer-events-none absolute right-[22%] bottom-0 h-56 w-px bg-[linear-gradient(to_top,rgba(0,112,184,0.6),transparent)]" />
 
       <div className="container-x relative">
         {/* CTA band */}
@@ -64,10 +65,8 @@ export default function Footer() {
         {/* main columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 py-10 md:py-12">
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-block mb-5">
-              <span className="font-display text-2xl font-bold tracking-tight">
-                Core Tech <span className="text-brand">Partner</span>
-              </span>
+            <Link href="/" className="inline-block mb-5" aria-label="Core Tech Partner home">
+              <Logo inverted className="h-14" />
             </Link>
             <p className="text-white/55 leading-relaxed max-w-md mb-8">
               A software studio in Islamabad building web apps, mobile products,

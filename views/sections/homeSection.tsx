@@ -103,7 +103,7 @@ export default function HomeSection() {
               className="max-w-3xl"
             >
               <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] backdrop-blur-md px-4 py-1.5 text-[0.72rem] font-semibold tracking-[0.16em] uppercase text-white/80 mb-7">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand shadow-[0_0_12px_rgba(13,124,126,0.9)]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand shadow-[0_0_12px_rgba(0,112,184,0.95)]" />
                 {slides[active].tag}
               </span>
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.6rem] font-extrabold text-white leading-[1.02] tracking-tight mb-6">
